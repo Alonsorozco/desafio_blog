@@ -1,0 +1,38 @@
+
+<div class="container pt-5">
+
+<table class="table table-dark">
+    <tr>
+        <th class ="bg-primary">Email</th>
+        <th class="bg-primary">Edad</th>
+        <th class="bg-primary">Comentarios</th>
+    </tr>
+<% @posts.each do |post| %>
+    <tr>
+        <td><%= post.title %></td>
+        <td><%= post.img%></td>
+        <td><%= post.content %></td>
+<%end%>
+</table>
+
+<h1> Dejanos Tus Comentarios </h1>
+<form action="/pages/create" method= "POST" id="create_posts">
+<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+<form>
+    <div class="form-group">
+        <label for="title">Titulo</label>
+        <input name="title" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Tu titulo">
+
+    </div>
+
+     <div class="form-group">
+        <label for="img">Imagen</label>
+        <input name="img" type="url"class="form-control" id="title"  placeholder="Tu Imagen">  
+    </div>
+
+     <div class="form-group">
+        <label for="content">Contenido</label>
+        <input name="content" class="form-control" id="title" placeholder="Tu Contenido">
+    </div>
+    <button type="submit"  class="btn btn-primary" value="Enviar">Enviar</button>
+    </div>

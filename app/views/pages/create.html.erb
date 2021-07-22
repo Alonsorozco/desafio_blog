@@ -1,0 +1,19 @@
+
+<div class="container">
+<% if @post.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% else %>
+    <h1>En Hora Buena Post Fue Creado </h1>
+<% end %>
+<%= link_to 'Volver', root_path %>
+</div>
+
+
+
